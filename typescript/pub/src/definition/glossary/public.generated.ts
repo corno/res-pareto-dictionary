@@ -1,7 +1,14 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
-export type FIsEmpty = <GPType>($: T.Dictionary<GPType>,) => gcommon.T.Boolean
+export namespace I {}
+
+export namespace B {}
+
+export namespace F {
+    
+    export type IsEmpty = <GType>($: T.Dictionary<GType>,) => g_common.T.Boolean
+}

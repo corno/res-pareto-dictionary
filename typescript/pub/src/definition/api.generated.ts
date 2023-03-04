@@ -1,9 +1,9 @@
 import * as pt from 'pareto-core-types'
 
-import * as gthis from "./glossary"
+import * as g_this from "./glossary"
 
-export type CisEmpty = gthis.FIsEmpty
+export type isEmpty = g_this.F.IsEmpty
 
 export type API = {
-    isEmpty: CisEmpty
+    isEmpty: isEmpty
 }
