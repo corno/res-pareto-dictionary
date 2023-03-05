@@ -8,5 +8,5 @@ const d = pd.d
 export const $: gapi.T.API<pd.SourceLocation> =  {
     'algorithms': d({
         "isEmpty": algorithm(functionReference("this", {}, "IsEmpty")),
-    })
+    }),
 }

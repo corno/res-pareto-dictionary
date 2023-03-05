@@ -23,13 +23,13 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "Type": null,
     }),
     'types': d({
-        "Dictionary": type(dictionary(glossaryParameter("Type")))
+        "Dictionary": type(dictionary(glossaryParameter("Type"))),
     }),
     'builders': d({
     }),
     'interfaces': d({
     }),
     'functions': d({
-        "IsEmpty": func(typeReference("Dictionary"), null, null, data(typeReference("common", "Boolean"), false))
+        "IsEmpty": func(typeReference("Dictionary"), null, null, data(typeReference("common", "Boolean"), false)),
         }),
 }
