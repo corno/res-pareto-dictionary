@@ -1,6 +1,6 @@
 
 
-import { isEmpty } from "../definition/api.generated"
+import { isEmpty } from "../api.generated"
 
 export const $$: isEmpty = ($) => {
     let isEmpty = true
