@@ -7,29 +7,29 @@ import {
     dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
-    data,
-    func,
+    sdata,
+    sfunc,
     type,
     optional,
     number,
     glossaryParameter,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> = {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
         "Type": null,
     }),
     'types': d({
         "Dictionary": type(dictionary(glossaryParameter("Type"))),
     }),
-    'builders': d({
-    }),
-    'interfaces': d({
-    }),
-    'functions': d({
-        "IsEmpty": func(typeReference("Dictionary"), null, null, data(typeReference("common", "Boolean"), false)),
+    'type': ['synchronous', {
+        'builders': d({
         }),
+        'functions': d({
+            "IsEmpty": sfunc(typeReference("Dictionary"), null, null, sdata(typeReference("common", "Boolean"))),
+        }),
+    }],
 }
