@@ -13,6 +13,8 @@ import {
     optional,
     number,
     glossaryParameter,
+    imp,
+    externalTypeReference,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -22,6 +24,9 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
         "Type": null,
     }),
+    'imports': d({
+        "common": imp({}),
+    }),
     'types': d({
         "Dictionary": type(dictionary(glossaryParameter("Type"))),
     }),
@@ -29,7 +34,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'builders': d({
         }),
         'functions': d({
-            "IsEmpty": sfunc(typeReference("Dictionary"), null, null, sdata(typeReference("common", "Boolean"))),
+            "IsEmpty": sfunc(typeReference("Dictionary"), null, null, sdata(externalTypeReference("common", "Boolean"))),
         }),
     }],
 }
