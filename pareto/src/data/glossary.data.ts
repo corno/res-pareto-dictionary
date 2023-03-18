@@ -1,17 +1,11 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    string,
-    null_,
-    nested,
-    dictionary, member, taggedUnion, types, group,
-    array,
+    dictionary,
     typeReference,
-    sdata,
+    data,
     sfunc,
     type,
-    optional,
-    number,
     glossaryParameter,
     imp,
     externalTypeReference,
@@ -30,11 +24,17 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'types': d({
         "Dictionary": type(dictionary(glossaryParameter("Type"))),
     }),
-    'type': ['synchronous', {
-        'builders': d({
-        }),
+    'asynchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
+        'functions': d({}),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
         'functions': d({
-            "IsEmpty": sfunc(sdata(typeReference("Dictionary")), sdata(externalTypeReference("common", "Boolean"))),
+            "IsEmpty": sfunc(data(typeReference("Dictionary")), externalTypeReference("common", "Boolean")),
         }),
-    }],
+    },
+
 }
