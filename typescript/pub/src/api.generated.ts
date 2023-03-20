@@ -8,5 +8,5 @@ export namespace A {
 }
 
 export type API = {
-    isEmpty: A.isEmpty
+    readonly 'isEmpty': A.isEmpty
 }
