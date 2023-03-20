@@ -24,11 +24,11 @@ export const $$: getTestSet = () => {
 
     createBooleanTest(
         "isEmpty",
-        g_pub.$r.isEmpty(pm.wrapRawDictionary({}))
+        g_pub.$r.isEmpty()(pm.wrapRawDictionary({}))
     )
     createBooleanTest(
         "isNotEmpty",
-        !g_pub.$r.isEmpty(pm.wrapRawDictionary({ "A": "B" }))
+        !g_pub.$r.isEmpty()(pm.wrapRawDictionary({ "A": "B" }))
     )
     return pa.asyncValue({
         elements: builder.getDictionary()

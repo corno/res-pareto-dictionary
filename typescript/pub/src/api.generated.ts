@@ -4,7 +4,7 @@ import * as g_this from "./glossary"
 
 export namespace A {
     
-    export type isEmpty = g_this.SYNC.A.F.IsEmpty
+    export type isEmpty = <GAnnotation>() => g_this.SYNC.A.F.IsEmpty<GAnnotation>
 }
 
 export type API = {
