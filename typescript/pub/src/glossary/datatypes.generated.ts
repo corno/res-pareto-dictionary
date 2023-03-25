@@ -6,8 +6,8 @@ export namespace T {
     
     export namespace Dictionary {
         
-        export type D<GType> = GType
+        export type D<TType> = TType
     }
     
-    export type Dictionary<GType> = pt.Dictionary<GType>
+    export type Dictionary<TType> = pt.Dictionary<TType>
 }

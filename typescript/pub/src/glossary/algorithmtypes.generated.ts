@@ -17,7 +17,7 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type IsEmpty<GType> = ($: T.Dictionary<GType>) => g_common.T.Boolean
+            export type IsEmpty = <TType>($: T.Dictionary<TType>) => g_common.T.Boolean
         }
     }
 }
