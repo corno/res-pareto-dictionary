@@ -20,9 +20,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'imports': d({
         "common": imp({}),
     }),
-    'types': d({
-        "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
-    }),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
+        }),
+    },
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
