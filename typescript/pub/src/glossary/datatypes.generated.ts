@@ -24,4 +24,16 @@ export namespace T {
     }
     
     export type FilterableDictionary<TType> = pt.Dictionary<[ false ] | [ true, TType]>
+    
+    export namespace UnsafeMergeParameters {
+        
+        export type primary<TType> = T.Dictionary<TType>
+        
+        export type secondary<TType> = T.Dictionary<TType>
+    }
+    
+    export type UnsafeMergeParameters<TType> = {
+        readonly 'primary': T.Dictionary<TType>
+        readonly 'secondary': T.Dictionary<TType>
+    }
 }

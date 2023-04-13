@@ -24,5 +24,20 @@ export namespace SYNC {
         export namespace F {
             export type IsEmpty = <TType>($: T.Dictionary<TType>) => g_common.T.Boolean
         }
+        
+        
+        export namespace F {
+            export type MergeAndIgnore = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
+        }
+        
+        
+        export namespace F {
+            export type MergeAndOverwrite = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
+        }
+        
+        
+        export namespace F {
+            export type UnsafeMerge = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
+        }
     }
 }
