@@ -17,6 +17,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type Filter = <TType>($: T.FilterableDictionary<TType>) => T.Dictionary<TType>
+        }
+        
+        
+        export namespace F {
             export type IsEmpty = <TType>($: T.Dictionary<TType>) => g_common.T.Boolean
         }
     }

@@ -8,5 +8,7 @@ const d = pd.d
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
         "isEmpty": algorithm(sfunction("this", {}, "IsEmpty")),
+        "filter": algorithm(sfunction("this", {}, "Filter")),
+        
     }),
 }
