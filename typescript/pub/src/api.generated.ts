@@ -16,11 +16,17 @@ export namespace A {
     
     export type isEmpty = () => g_this.SYNC.A.F.IsEmpty
     
-    export type mergeAndIgnore = () => g_this.SYNC.A.F.MergeAndIgnore
+    export type mergeAndIgnore = ($se: {
+        readonly 'error': g_this.ASYNC.I.Error
+    }) => g_this.SYNC.A.F.MergeAndIgnore
     
-    export type mergeAndOverwrite = () => g_this.SYNC.A.F.MergeAndOverwrite
+    export type mergeAndOverwrite = ($se: {
+        readonly 'error': g_this.ASYNC.I.Error
+    }) => g_this.SYNC.A.F.MergeAndOverwrite
     
-    export type unsafeMerge = () => g_this.SYNC.A.F.UnsafeMerge
+    export type unsafeMerge = ($se: {
+        readonly 'error': g_this.ASYNC.I.Error
+    }) => g_this.SYNC.A.F.UnsafeMerge
 }
 
 export type API = {

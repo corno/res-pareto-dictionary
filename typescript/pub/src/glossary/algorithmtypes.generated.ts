@@ -6,7 +6,13 @@ import * as g_common from "glo-pareto-common"
 
 export namespace ASYNC {
     
-    export namespace I {}
+    export namespace I {
+        
+        export type Error = {
+            'data': ($: T.Error, ) => void
+            'end': () => void
+        }
+    }
     
     export namespace A {}
 }

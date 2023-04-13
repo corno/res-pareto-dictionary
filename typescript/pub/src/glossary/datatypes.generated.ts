@@ -13,6 +13,15 @@ export namespace T {
     
     export type Dictionary<TType> = pt.Dictionary<TType>
     
+    export namespace Error {
+        
+        export type key = string
+    }
+    
+    export type Error = {
+        readonly 'key': string
+    }
+    
     export namespace FilterableDictionary {
         
         export namespace D {

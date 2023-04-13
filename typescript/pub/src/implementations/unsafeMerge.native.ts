@@ -4,7 +4,7 @@ import * as g_this from "../glossary"
 
 import { A } from "../api.generated"
 
-export const $$: A.unsafeMerge = () => {
+export const $$: A.unsafeMerge = ($se) => {
     return <T>($: g_this.T.UnsafeMergeParameters<T>) => {
         const out: { [key: string]: T } = {}
         $.primary.__forEach(() => false, ($, key) => {
@@ -12,10 +12,14 @@ export const $$: A.unsafeMerge = () => {
         })
         $.secondary.__forEach(() => false, ($, key) => {
             if (out[key] !== undefined) {
+                $se.error.data({
+                    'key': key,
+                })
                 pi.panic(`key already exists: ${key}`)
             }
             out[key] = $
         })
+        $se.error.end()
         return pi.wrapRawDictionary(out)
     }
 }
