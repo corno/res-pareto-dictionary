@@ -5,12 +5,12 @@ import * as g_this from "../glossary"
 import { A } from "../api.generated"
 
 export const $$: A.unsafeRekey = () => {
-    return <T, NT>($: g_this.T.Dictionary<T>, $c: {
-        'map': g_this.SYNC.A.F.MapKeyValue,
+    return <RT, T>($: g_this.T.Dictionary<T>, $c: {
+        'map': ($: g_this.T.KeyValuePair<T>) => g_this.T.KeyValuePair<RT>,
     }) => {
-        const out: { [key: string]: NT } = {}
+        const out: { [key: string]: RT } = {}
         $.__forEach(() => false, ($, key) => {
-            const res = $c.map<NT, T>({
+            const res = $c.map({
                 'key': key,
                 'value': $,
             })

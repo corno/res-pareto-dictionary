@@ -33,11 +33,6 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type MapKeyValue = <TResultType, TType>($: T.KeyValuePair<TType>) => T.KeyValuePair<TResultType>
-        }
-        
-        
-        export namespace F {
             export type MergeAndIgnore = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
         }
         
@@ -59,7 +54,7 @@ export namespace SYNC {
         
         export namespace F {
             export type UnsafeRekey = <TResultType, TType>($: T.Dictionary<TType>, $c: {
-                'map': SYNC.A.F.MapKeyValue,
+                "map": ($: T.KeyValuePair<TType>) => T.KeyValuePair<TResultType>,
             }) => T.Dictionary<TResultType>
         }
     }

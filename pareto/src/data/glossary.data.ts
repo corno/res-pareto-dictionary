@@ -19,7 +19,7 @@ import {
     type,
     string,
     scallbackfunction,
-    sFunctionReference,
+    scallback,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -65,14 +65,41 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({
-            "IsEmpty": sfunction(externalTypeReference("common", "Boolean"), data(typeReference("Dictionary", { "Type": typeParameter("Type") })), { "Type": null }),
-            "MapKeyValue": sfunction(typeReference("KeyValuePair", { "Type": typeParameter("ResultType") }), data(typeReference("KeyValuePair", { "Type": typeParameter("Type") })), { "Type": null, "ResultType": null }),
-            "Filter": sfunction(typeReference("Dictionary", { "Type": typeParameter("Type") }), data(typeReference("FilterableDictionary", { "Type": typeParameter("Type") })), { "Type": null }),
-            "UnsafeRekey": scallbackfunction(typeReference("Dictionary", { "Type": typeParameter("ResultType") }), data(typeReference("Dictionary", { "Type": typeParameter("Type") })), {"map": sFunctionReference("MapKeyValue") }, { "Type": null, "ResultType": null }),
-            "UnsafeMerge": sfunction(typeReference("Dictionary", { "Type": typeParameter("Type") }), data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })), { "Type": null }),
-            "UnsafeAddEntry": sfunction(typeReference("Dictionary", { "Type": typeParameter("Type") }), data(typeReference("UnsafeAddEntryParameters", { "Type": typeParameter("Type") })), { "Type": null }),
-            "MergeAndIgnore": sfunction(typeReference("Dictionary", { "Type": typeParameter("Type") }), data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })), { "Type": null }),
-            "MergeAndOverwrite": sfunction(typeReference("Dictionary", { "Type": typeParameter("Type") }), data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })), { "Type": null }),
+            "IsEmpty": sfunction(
+                externalTypeReference("common", "Boolean"),
+                data(typeReference("Dictionary", { "Type": typeParameter("Type") })),
+                { "Type": null }
+            ),
+            "Filter": sfunction(
+                typeReference("Dictionary", { "Type": typeParameter("Type") }),
+                data(typeReference("FilterableDictionary", { "Type": typeParameter("Type") })),
+                { "Type": null }),
+            "UnsafeRekey": scallbackfunction(
+                typeReference("Dictionary", { "Type": typeParameter("ResultType") }),
+                data(typeReference("Dictionary", { "Type": typeParameter("Type") })),
+                {
+                    "map": scallback(
+                        typeReference("KeyValuePair", { "Type": typeParameter("ResultType") }),
+                        typeReference("KeyValuePair", { "Type": typeParameter("Type") })
+                    ),
+                },
+                { "Type": null, "ResultType": null }),
+            "UnsafeMerge": sfunction(
+                typeReference("Dictionary", { "Type": typeParameter("Type") }),
+                data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })),
+                { "Type": null }),
+            "UnsafeAddEntry": sfunction(
+                typeReference("Dictionary", { "Type": typeParameter("Type") }),
+                data(typeReference("UnsafeAddEntryParameters", { "Type": typeParameter("Type") })),
+                { "Type": null }),
+            "MergeAndIgnore": sfunction(
+                typeReference("Dictionary", { "Type": typeParameter("Type") }),
+                data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })),
+                { "Type": null }),
+            "MergeAndOverwrite": sfunction(
+                typeReference("Dictionary", { "Type": typeParameter("Type") }),
+                data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })),
+                { "Type": null }),
         }),
     },
 
