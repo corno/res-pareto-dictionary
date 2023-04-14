@@ -43,6 +43,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type UnsafeAddEntry = <TType>($: T.UnsafeAddEntryParameters<TType>) => T.Dictionary<TType>
+        }
+        
+        
+        export namespace F {
             export type UnsafeMerge = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
         }
     }

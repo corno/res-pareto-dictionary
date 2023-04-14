@@ -3,6 +3,7 @@ import { $$ as ifilter } from "./implementations/filter.native"
 import { $$ as iisEmpty } from "./implementations/isEmpty.native"
 import { $$ as imergeAndIgnore } from "./implementations/mergeAndIgnore.native"
 import { $$ as imergeAndOverwrite } from "./implementations/mergeAndOverwrite.native"
+import { $$ as iunsafeAddEntry } from "./implementations/unsafeAddEntry.native"
 import { $$ as iunsafeMerge } from "./implementations/unsafeMerge.native"
 
 export const $api: API = {
@@ -10,5 +11,6 @@ export const $api: API = {
     'isEmpty': iisEmpty,
     'mergeAndIgnore': imergeAndIgnore,
     'mergeAndOverwrite': imergeAndOverwrite,
+    'unsafeAddEntry': iunsafeAddEntry,
     'unsafeMerge': iunsafeMerge,
 }

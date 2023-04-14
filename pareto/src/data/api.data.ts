@@ -12,6 +12,9 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         "unsafeMerge": algorithm(sfunction("this", {}, "UnsafeMerge"), {}, dependent(null, {}, {
             "error": aSideEffect("this", {}, "Error")
         })),
+        "unsafeAddEntry": algorithm(sfunction("this", {}, "UnsafeAddEntry"), {}, dependent(null, {}, {
+            //"error": aSideEffect("this", {}, "Error")
+        })),
         "mergeAndOverwrite": algorithm(sfunction("this", {}, "MergeAndOverwrite"), {}, dependent(null, {}, {
             "error": aSideEffect("this", {}, "Error")
         })),
