@@ -5,6 +5,7 @@ import { $$ as imergeAndIgnore } from "./implementations/mergeAndIgnore.native"
 import { $$ as imergeAndOverwrite } from "./implementations/mergeAndOverwrite.native"
 import { $$ as iunsafeAddEntry } from "./implementations/unsafeAddEntry.native"
 import { $$ as iunsafeMerge } from "./implementations/unsafeMerge.native"
+import { $$ as iunsafeRekey } from "./implementations/unsafeRekey.native"
 
 export const $api: API = {
     'filter': ifilter,
@@ -13,4 +14,5 @@ export const $api: API = {
     'mergeAndOverwrite': imergeAndOverwrite,
     'unsafeAddEntry': iunsafeAddEntry,
     'unsafeMerge': iunsafeMerge,
+    'unsafeRekey': iunsafeRekey,
 }

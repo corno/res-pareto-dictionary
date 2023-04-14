@@ -10,13 +10,13 @@ export const $$: A.unsafeAddEntry = () => {
         $.dictionary.__forEach(() => false, ($, key) => {
             out[key] = $
         })
-        if (out[$.key] !== undefined) {
-            pi.panic(`key already exists: ${$.key}`)
+        if (out[$.keyValuePair.key] !== undefined) {
+            pi.panic(`key already exists: ${$.keyValuePair.key}`)
             // $se.error.data({
             //     'key': key,
             // })
         }
-        out[$.key] = $.value
+        out[$.keyValuePair.key] = $.keyValuePair.value
         return pi.wrapRawDictionary(out)
     }
 }

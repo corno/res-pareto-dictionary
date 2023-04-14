@@ -34,19 +34,28 @@ export namespace T {
     
     export type FilterableDictionary<TType> = pt.Dictionary<[ false ] | [ true, TType]>
     
-    export namespace UnsafeAddEntryParameters {
-        
-        export type dictionary<TType> = T.Dictionary<TType>
+    export namespace KeyValuePair {
         
         export type key<TType> = string
         
         export type value<TType> = TType
     }
     
-    export type UnsafeAddEntryParameters<TType> = {
-        readonly 'dictionary': T.Dictionary<TType>
+    export type KeyValuePair<TType> = {
         readonly 'key': string
         readonly 'value': TType
+    }
+    
+    export namespace UnsafeAddEntryParameters {
+        
+        export type dictionary<TType> = T.Dictionary<TType>
+        
+        export type keyValuePair<TType> = T.KeyValuePair<TType>
+    }
+    
+    export type UnsafeAddEntryParameters<TType> = {
+        readonly 'dictionary': T.Dictionary<TType>
+        readonly 'keyValuePair': T.KeyValuePair<TType>
     }
     
     export namespace UnsafeMergeParameters {

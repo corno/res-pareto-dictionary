@@ -9,6 +9,7 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
         "isEmpty": algorithm(sfunction("this", {}, "IsEmpty")),
         "filter": algorithm(sfunction("this", {}, "Filter")),
+        "unsafeRekey": algorithm(sfunction("this", {}, "UnsafeRekey")),
         "unsafeMerge": algorithm(sfunction("this", {}, "UnsafeMerge"), {}, dependent(null, {}, {
             "error": aSideEffect("this", {}, "Error")
         })),
