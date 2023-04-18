@@ -54,7 +54,7 @@ export namespace SYNC {
         
         export namespace F {
             export type UnsafeRekey = <TResultType, TType>($: T.Dictionary<TType>, $c: {
-                "map": ($: T.KeyValuePair<TType>) => T.KeyValuePair<TResultType>,
+                'map': ($: T.KeyValuePair<TType>) => T.KeyValuePair<TResultType>,
             }) => T.Dictionary<TResultType>
         }
     }
