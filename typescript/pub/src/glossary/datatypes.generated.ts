@@ -46,6 +46,18 @@ export namespace T {
         readonly 'value': TType
     }
     
+    export namespace MergeParameters {
+        
+        export type primary<TType> = T.Dictionary<TType>
+        
+        export type secondary<TType> = T.Dictionary<TType>
+    }
+    
+    export type MergeParameters<TType> = {
+        readonly 'primary': T.Dictionary<TType>
+        readonly 'secondary': T.Dictionary<TType>
+    }
+    
     export namespace UnsafeAddEntryParameters {
         
         export type dictionary<TType> = T.Dictionary<TType>
@@ -56,17 +68,5 @@ export namespace T {
     export type UnsafeAddEntryParameters<TType> = {
         readonly 'dictionary': T.Dictionary<TType>
         readonly 'keyValuePair': T.KeyValuePair<TType>
-    }
-    
-    export namespace UnsafeMergeParameters {
-        
-        export type primary<TType> = T.Dictionary<TType>
-        
-        export type secondary<TType> = T.Dictionary<TType>
-    }
-    
-    export type UnsafeMergeParameters<TType> = {
-        readonly 'primary': T.Dictionary<TType>
-        readonly 'secondary': T.Dictionary<TType>
     }
 }

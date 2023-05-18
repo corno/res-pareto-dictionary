@@ -5,7 +5,7 @@ import * as g_this from "../glossary"
 import { A } from "../api.generated"
 
 export const $$: A.unsafeMerge = ($se) => {
-    return <T>($: g_this.T.UnsafeMergeParameters<T>) => {
+    return <T>($: g_this.T.MergeParameters<T>) => {
         const out: { [key: string]: T } = {}
         $.primary.__forEach(() => false, ($, key) => {
             out[key] = $

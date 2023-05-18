@@ -26,9 +26,9 @@ import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/gloss
 const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
-    'parameters': d({}),
+    'glossary parameters':d({}),
     'imports': d({
-        "common": imp({}),
+        "common": imp(),
     }),
     'root': {
         'namespaces': d({}),
@@ -42,7 +42,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             })),
             "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
             "FilterableDictionary": parametrizedType({ "Type": null }, dictionary(optional(ref(typeParameter("Type"))))),
-            "UnsafeMergeParameters": parametrizedType({ "Type": null }, group({
+            "MergeParameters": parametrizedType({ "Type": null }, group({
                 "primary": member(ref(typeReference("Dictionary", { "Type": typeParameter("Type") }))),
                 "secondary": member(ref(typeReference("Dictionary", { "Type": typeParameter("Type") }))),
             })),
@@ -86,7 +86,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 { "Type": null, "ResultType": null }),
             "UnsafeMerge": sfunction(
                 typeReference("Dictionary", { "Type": typeParameter("Type") }),
-                data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })),
+                data(typeReference("MergeParameters", { "Type": typeParameter("Type") })),
                 { "Type": null }),
             "UnsafeAddEntry": sfunction(
                 typeReference("Dictionary", { "Type": typeParameter("Type") }),
@@ -94,11 +94,11 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 { "Type": null }),
             "MergeAndIgnore": sfunction(
                 typeReference("Dictionary", { "Type": typeParameter("Type") }),
-                data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })),
+                data(typeReference("MergeParameters", { "Type": typeParameter("Type") })),
                 { "Type": null }),
             "MergeAndOverwrite": sfunction(
                 typeReference("Dictionary", { "Type": typeParameter("Type") }),
-                data(typeReference("UnsafeMergeParameters", { "Type": typeParameter("Type") })),
+                data(typeReference("MergeParameters", { "Type": typeParameter("Type") })),
                 { "Type": null }),
         }),
     },

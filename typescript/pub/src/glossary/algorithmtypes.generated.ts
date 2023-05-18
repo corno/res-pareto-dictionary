@@ -33,12 +33,12 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type MergeAndIgnore = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
+            export type MergeAndIgnore = <TType>($: T.MergeParameters<TType>) => T.Dictionary<TType>
         }
         
         
         export namespace F {
-            export type MergeAndOverwrite = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
+            export type MergeAndOverwrite = <TType>($: T.MergeParameters<TType>) => T.Dictionary<TType>
         }
         
         
@@ -48,7 +48,7 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type UnsafeMerge = <TType>($: T.UnsafeMergeParameters<TType>) => T.Dictionary<TType>
+            export type UnsafeMerge = <TType>($: T.MergeParameters<TType>) => T.Dictionary<TType>
         }
         
         
