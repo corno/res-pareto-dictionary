@@ -41,6 +41,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "value": member(ref(typeParameter("Type"))),
             })),
             "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
+            "DictionaryAndKey": parametrizedType({ "Type": null }, group({
+                "dictionary": member(dictionary(ref(typeParameter("Type")))),
+                "key": member(string()),
+            })),
             "FilterableDictionary": parametrizedType({ "Type": null }, dictionary(optional(ref(typeParameter("Type"))))),
             "MergeParameters": parametrizedType({ "Type": null }, group({
                 "primary": member(ref(typeReference("Dictionary", { "Type": typeParameter("Type") }))),
@@ -65,6 +69,11 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({
+            "Contains": sfunction(
+                externalTypeReference("common", "Boolean"),
+                data(typeReference("DictionaryAndKey", { "Type": typeParameter("Type") })),
+                { "Type": null }
+            ),
             "IsEmpty": sfunction(
                 externalTypeReference("common", "Boolean"),
                 data(typeReference("Dictionary", { "Type": typeParameter("Type") })),

@@ -13,6 +13,23 @@ export namespace T {
     
     export type Dictionary<TType> = pt.Dictionary<TType>
     
+    export namespace DictionaryAndKey {
+        
+        export namespace dictionary {
+            
+            export type D<TType> = TType
+        }
+        
+        export type dictionary<TType> = pt.Dictionary<TType>
+        
+        export type key<TType> = string
+    }
+    
+    export type DictionaryAndKey<TType> = {
+        readonly 'dictionary': pt.Dictionary<TType>
+        readonly 'key': string
+    }
+    
     export namespace Error {
         
         export type key = string

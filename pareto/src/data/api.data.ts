@@ -7,6 +7,7 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
+        "contains": algorithm(sfunction("this", {}, "Contains")),
         "isEmpty": algorithm(sfunction("this", {}, "IsEmpty")),
         "filter": algorithm(sfunction("this", {}, "Filter")),
         "unsafeRekey": algorithm(sfunction("this", {}, "UnsafeRekey")),

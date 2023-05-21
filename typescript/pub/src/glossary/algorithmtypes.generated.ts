@@ -23,6 +23,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type Contains = <TType>($: T.DictionaryAndKey<TType>) => g_common.T.Boolean
+        }
+        
+        
+        export namespace F {
             export type Filter = <TType>($: T.FilterableDictionary<TType>) => T.Dictionary<TType>
         }
         

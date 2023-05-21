@@ -10,9 +10,12 @@ export namespace D {
     
     
     
+    
 }
 
 export namespace A {
+    
+    export type contains = () => g_this.SYNC.A.F.Contains
     
     export type filter = () => g_this.SYNC.A.F.Filter
     
@@ -36,6 +39,7 @@ export namespace A {
 }
 
 export type API = {
+    readonly 'contains': A.contains
     readonly 'filter': A.filter
     readonly 'isEmpty': A.isEmpty
     readonly 'mergeAndIgnore': A.mergeAndIgnore
