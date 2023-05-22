@@ -20,6 +20,8 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         "mergeAndOverwrite": algorithm(sfunction("this", {}, "MergeAndOverwrite"), {}, dependent(null, {}, {
             "error": aSideEffect("this", {}, "Error")
         })),
+        "mergeDictionaries": algorithm(sfunction("this", {}, "MergeDictionaries"), {}, dependent(null, {}, {
+        })),
         "mergeAndIgnore": algorithm(sfunction("this", {}, "MergeAndIgnore"), {}, dependent(null, {}, {
             "error": aSideEffect("this", {}, "Error")
         })),

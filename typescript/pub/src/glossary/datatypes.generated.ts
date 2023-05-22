@@ -63,6 +63,26 @@ export namespace T {
         readonly 'value': TType
     }
     
+    export namespace MergeDictionariesParameters {
+        
+        export namespace dictionaries {
+            
+            export type D<TType> = T.Dictionary<TType>
+        }
+        
+        export type dictionaries<TType> = pt.Dictionary<T.Dictionary<TType>>
+        
+        export type escape<TType> = string
+        
+        export type separator<TType> = string
+    }
+    
+    export type MergeDictionariesParameters<TType> = {
+        readonly 'dictionaries': pt.Dictionary<T.Dictionary<TType>>
+        readonly 'escape': string
+        readonly 'separator': string
+    }
+    
     export namespace MergeParameters {
         
         export type primary<TType> = T.Dictionary<TType>

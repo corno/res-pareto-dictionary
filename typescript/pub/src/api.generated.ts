@@ -11,6 +11,7 @@ export namespace D {
     
     
     
+    
 }
 
 export namespace A {
@@ -29,6 +30,8 @@ export namespace A {
         readonly 'error': g_this.ASYNC.I.Error
     }) => g_this.SYNC.A.F.MergeAndOverwrite
     
+    export type mergeDictionaries = () => g_this.SYNC.A.F.MergeDictionaries
+    
     export type unsafeAddEntry = () => g_this.SYNC.A.F.UnsafeAddEntry
     
     export type unsafeMerge = ($se: {
@@ -44,6 +47,7 @@ export type API = {
     readonly 'isEmpty': A.isEmpty
     readonly 'mergeAndIgnore': A.mergeAndIgnore
     readonly 'mergeAndOverwrite': A.mergeAndOverwrite
+    readonly 'mergeDictionaries': A.mergeDictionaries
     readonly 'unsafeAddEntry': A.unsafeAddEntry
     readonly 'unsafeMerge': A.unsafeMerge
     readonly 'unsafeRekey': A.unsafeRekey

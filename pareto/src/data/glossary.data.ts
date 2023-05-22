@@ -26,7 +26,7 @@ import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/gloss
 const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
-    'glossary parameters':d({}),
+    'glossary parameters': d({}),
     'imports': d({
         "common": imp(),
     }),
@@ -49,6 +49,11 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "MergeParameters": parametrizedType({ "Type": null }, group({
                 "primary": member(ref(typeReference("Dictionary", { "Type": typeParameter("Type") }))),
                 "secondary": member(ref(typeReference("Dictionary", { "Type": typeParameter("Type") }))),
+            })),
+            "MergeDictionariesParameters": parametrizedType({ "Type": null }, group({
+                "dictionaries": member(dictionary(ref(typeReference("Dictionary", { "Type": typeParameter("Type") })))),
+                "separator": member(string()),
+                "escape": member(string()),// to escape if the separator appears in the key of the top level dictionary
             })),
             "UnsafeAddEntryParameters": parametrizedType({ "Type": null }, group({
                 "dictionary": member(ref(typeReference("Dictionary", { "Type": typeParameter("Type") }))),
@@ -104,6 +109,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "MergeAndIgnore": sfunction(
                 typeReference("Dictionary", { "Type": typeParameter("Type") }),
                 data(typeReference("MergeParameters", { "Type": typeParameter("Type") })),
+                { "Type": null }),
+            "MergeDictionaries": sfunction(
+                typeReference("Dictionary", { "Type": typeParameter("Type") }),
+                data(typeReference("MergeDictionariesParameters", { "Type": typeParameter("Type") })),
                 { "Type": null }),
             "MergeAndOverwrite": sfunction(
                 typeReference("Dictionary", { "Type": typeParameter("Type") }),
