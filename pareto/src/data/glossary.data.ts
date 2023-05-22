@@ -84,15 +84,15 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 data(typeReference("FilterableDictionary", { "Type": typeParameter("Type") })),
                 { "Type": null }),
             "UnsafeRekey": scallbackfunction(
-                typeReference("Dictionary", { "Type": typeParameter("ResultType") }),
+                typeReference("Dictionary", { "Type": typeParameter("Type") }),
                 data(typeReference("Dictionary", { "Type": typeParameter("Type") })),
                 {
                     "map": scallback(
-                        typeReference("KeyValuePair", { "Type": typeParameter("ResultType") }),
+                        externalTypeReference("common", "String"),
                         typeReference("KeyValuePair", { "Type": typeParameter("Type") })
                     ),
                 },
-                { "Type": null, "ResultType": null }),
+                { "Type": null }),
             "UnsafeMerge": sfunction(
                 typeReference("Dictionary", { "Type": typeParameter("Type") }),
                 data(typeReference("MergeParameters", { "Type": typeParameter("Type") })),
